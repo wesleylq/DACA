@@ -15,9 +15,9 @@ Projeto consiste num sistema de controle para uma loja de aluguel de roupas e ac
 
 ![Image](https://i.ibb.co/p0Xp58S/Loz-Diagram.png)
 
-### Requisitos
+### Requisito
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/packages/release/mars/2/eclipse-ide-java-ee-developers)
-* Spring Boot - No Eclipse: Ajuda -> Eclipse Market Place -> Busque por "Spring Boot" 
+
 
 ### Instalação
 1. Faça o download do zip ou clone o repositório Git.
