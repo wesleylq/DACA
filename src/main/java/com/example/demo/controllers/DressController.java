@@ -34,7 +34,7 @@ public class DressController {
     }
     
     @RequestMapping(value = "/dress/{id}", method = RequestMethod.DELETE)
-    public void deleteArtista(@PathVariable String id) {
+    public void deleteArtista(@PathVariable int id) {
     	dressService.deleteRent(id);
     }
 

@@ -2,6 +2,8 @@ package com.example.demo.services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.example.demo.repositories.RentRepository;
 
 
 @Service
+@Transactional
 public class RentService {
 	
 	@Autowired
@@ -29,8 +32,8 @@ public class RentService {
 		
 	}
 
-	public void deleteRent(String rentId) {
-		rentRepository.deleteById(rentId);
+	public void deleteRent(int id) {
+		rentRepository.deleteById(id);
 		
 	}
 }

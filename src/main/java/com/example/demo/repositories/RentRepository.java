@@ -15,5 +15,7 @@ public interface RentRepository extends JpaRepository<Rent,String>{
 	public List<Rent> findAll();
 
 	public Rent findRentById(String RentId);
+
+	public void deleteById(int id);
 	
 }

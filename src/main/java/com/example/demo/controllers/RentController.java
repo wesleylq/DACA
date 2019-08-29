@@ -34,7 +34,8 @@ public class RentController {
 	@RequestMapping(value = "/rents", method = RequestMethod.POST)
     public ResponseEntity<Rent> addRent(@RequestBody Rent rent) {
 		
-		if(!this.checkRent(rent.getDress().getId(),rent.getDateInit(), rent.getDateEnd())) {			
+		if((!this.checkRent(rent.getDress().getId(),rent.getDateInit(), rent.getDateEnd()))
+				|| rent.getDateInit().isAfter(rent.getDateEnd())) {			
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null); 
 		}
     	rentService.addRent(rent);
@@ -42,7 +43,7 @@ public class RentController {
     }
     
     @RequestMapping(value = "/rent/{id}", method = RequestMethod.DELETE)
-    public void deleteArtista(@PathVariable String id) {
+    public void deleteArtista(@PathVariable int id) {
     	rentService.deleteRent(id);
     }
     

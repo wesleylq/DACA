@@ -2,9 +2,8 @@ package com.example.demo.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -15,13 +14,12 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity
 public class Dress {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Id	
 	private int id;
 	private String model;
 	//private String value;
 	@JsonBackReference
-	@OneToMany(mappedBy = "dress")
+	@OneToMany(mappedBy = "dress", cascade = CascadeType.ALL)
 	//@JoinColumn(name= "rents")
 	private List<Rent> rents;
 	

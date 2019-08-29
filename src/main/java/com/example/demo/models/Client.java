@@ -2,6 +2,7 @@ package com.example.demo.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class Client {
 	//private String email;
 	//private String phone;
 	@JsonBackReference
-	@OneToMany(mappedBy = "client")
+	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
 	//@JoinColumn(name="rents")
 	private List<Rent> rents;
 	
