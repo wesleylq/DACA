@@ -15,7 +15,7 @@ Há três entidades simples: Cliente, Vestido e Aluguel(empréstimo), sendo alug
 
 ![Image](https://i.ibb.co/p0Xp58S/Loz-Diagram.png)
 
-A arquitetura no backend, utiliza-se de uma API RESTFul com SpringBoot, composta por três camadas lógicas: Controller, Service e Repositório.
+A arquitetura no backend, utiliza-se de uma API RESTFul com SpringBoot, composta por três camadas lógicas: Controller, Service e Repository.
 
 ### Requisito
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/packages/release/mars/2/eclipse-ide-java-ee-developers)
