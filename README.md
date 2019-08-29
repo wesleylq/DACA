@@ -23,7 +23,8 @@ Projeto consiste num sistema de controle para uma loja de aluguel de roupas e ac
 1. Faça o download do zip ou clone o repositório Git.
 2. Descompacte o arquivo zip (se você tiver baixado um)
 3. Abra o terminal e vá até o projeto, e entre na pasta onde está o pom.xml.
-4. Execulte os seguintes colmandos
+4. Execulte os seguintes comandos:
+
     ```cd to your project root folder in command line.```
     
    ``` mvn compile```
