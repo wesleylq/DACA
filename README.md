@@ -7,13 +7,15 @@ Projeto DACA 2019.2
 ## Sistema WEB + APP usando o Flutter (futuro...!), com Backend em Spring Boot. 
 
 ### Resumo do Projeto
-Projeto consiste num sistema de controle para uma loja de aluguel de roupas e acessórios, além de um e-commerce no aplicativo e web. 
+Projeto consiste num sistema de controle para uma loja de aluguel de roupas e acessórios, além de um e-commerce no aplicativo e web. No entanto, a parte inicial deste projeto foca na criação de um backend.
 
 ### Arquitetura e design do projeto
  
-3 entidades: Cliente, Vestido e Aluguel(empréstimo)
+Há três entidades simples: Cliente, Vestido e Aluguel(empréstimo), sendo aluguel composta pelas outras.
 
 ![Image](https://i.ibb.co/p0Xp58S/Loz-Diagram.png)
+
+A arquitetura no backend, utiliza-se de uma API RESTFul com SpringBoot, composta por três camadas lógicas: Controller, Service e Repositório.
 
 ### Requisito
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/packages/release/mars/2/eclipse-ide-java-ee-developers)
