@@ -24,7 +24,7 @@ public class RentService {
 		return rentRepository.findRentById(id);
 	}
 
-	public void addArtista(Rent rent) {
+	public void addRent(Rent rent) {
 		rentRepository.save(rent);
 		
 	}

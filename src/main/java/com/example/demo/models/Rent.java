@@ -1,11 +1,15 @@
 package com.example.demo.models;
 
+
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Rent {
@@ -13,12 +17,17 @@ public class Rent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;	
-	@OneToOne
+	@ManyToOne
+	//@JsonManagedReference
     @JoinColumn(name = "client_id", referencedColumnName = "id")
 	private Client client;
-	@OneToOne
+	@ManyToOne
+	//@JsonManagedReference
     @JoinColumn(name = "dress_id", referencedColumnName = "id")
 	private Dress dress;
+	
+	private String dateInit;
+	private String dateEnd;
 	
 	public Rent() {
 		
@@ -42,6 +51,24 @@ public class Rent {
 	public void setDress(Dress dress) {
 		this.dress = dress;
 	}
+
+	public LocalDate getDateInit() {
+		return LocalDate.parse(dateInit);
+	}
+
+	public void setDateInit(String dateInit) {
+		this.dateInit = dateInit;
+	}
+
+	public LocalDate getDateEnd() {
+		return LocalDate.parse(dateEnd);
+	}
+
+	public void setDateEnd(String dateEnd) {
+		this.dateEnd = dateEnd;
+	}
+
+	
 	
 
 }

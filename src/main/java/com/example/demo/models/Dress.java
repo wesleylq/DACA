@@ -1,10 +1,16 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Entity
 public class Dress {
@@ -14,8 +20,10 @@ public class Dress {
 	private int id;
 	private String model;
 	//private String value;
-	@OneToOne(mappedBy = "dress")
-	private Rent rent;
+	@JsonBackReference
+	@OneToMany(mappedBy = "dress")
+	//@JoinColumn(name= "rents")
+	private List<Rent> rents;
 	
 	
 	public Dress() {
@@ -52,14 +60,16 @@ public class Dress {
 	}
 */
 
-	public Rent getRent() {
-		return rent;
+
+	public List<Rent> getRents() {
+		return rents;
 	}
 
 
-	public void setRent(Rent rent) {
-		this.rent = rent;
+	public void setRents(List<Rent> rents) {
+		this.rents = rents;
 	}
+
 	
 	
 }
