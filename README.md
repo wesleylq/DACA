@@ -22,10 +22,11 @@ Projeto consiste num sistema de controle para uma loja de aluguel de roupas e ac
 ### Instalação
 1. Faça o download do zip ou clone o repositório Git.
 2. Descompacte o arquivo zip (se você tiver baixado um)
-3. Abra o Eclipse
-4. Arquivo -> Importar -> Projeto Maven existente -> Navegue até a pasta em que você descompactou o zip
-5. Selecione o projeto certo
-6. Escolha o arquivo do aplicativo de inicialização Spring localizado em Java/Demo
-7. Clique com o botão direito do mouse no arquivo e em Executar como Aplicativo Java
+3. Abra o terminal e vá até o projeto, e entre na pasta onde está o pom.xml.
+4. Execulte os seguintes colmandos
+    ```cd to your project root folder in command line.```
+   ``` mvn compile```
+   ```mvn exec:java -Dexec.mainClass=com.example.demo```
+
 
 
