@@ -25,7 +25,9 @@ Projeto consiste num sistema de controle para uma loja de aluguel de roupas e ac
 3. Abra o terminal e vá até o projeto, e entre na pasta onde está o pom.xml.
 4. Execulte os seguintes colmandos
     ```cd to your project root folder in command line.```
+    
    ``` mvn compile```
+   
    ```mvn exec:java -Dexec.mainClass=com.example.demo```
 
 
