@@ -2,6 +2,8 @@ package com.example.demo.services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,7 @@ import com.example.demo.models.Client;
 import com.example.demo.repositories.ClientRepository;
 
 @Service
+@Transactional
 public class ClientService {
 	
 	@Autowired
@@ -27,7 +30,7 @@ public class ClientService {
 		
 	}
 
-	public void deleteClient(String id) {
+	public void deleteClient(int id) {
 		clientRepository.deleteById(id);
 		
 	}

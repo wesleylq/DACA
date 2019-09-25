@@ -15,5 +15,7 @@ public interface ClientRepository extends JpaRepository<Client,String>{
 	public List<Client> findAll();
 
 	public Client findClientById(String clientId);
+
+	public void deleteById(int id);
 	
 }

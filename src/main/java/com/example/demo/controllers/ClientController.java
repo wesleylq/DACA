@@ -41,7 +41,7 @@ public class ClientController {
     }
     
     @RequestMapping(value = "/client/{id}", method = RequestMethod.DELETE)
-    public void deleteArtista(@PathVariable String id) {
+    public void deleteArtista(@PathVariable int id) {
     	clientService.deleteClient(id);
     }  
     

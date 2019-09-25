@@ -15,5 +15,7 @@ public interface DressRepository extends JpaRepository<Dress,String>{
 	public List<Dress> findAll();
 
 	public Dress findDressById(String DressId);
+
+	public void deleteById(int id);
 	
 }

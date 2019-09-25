@@ -17,17 +17,10 @@ Há três entidades simples: Cliente, Vestido e Aluguel(empréstimo), sendo alug
 
 A arquitetura no backend, utiliza-se de uma API RESTFul com SpringBoot, composta por três camadas lógicas: Controller, Service e Repository.
 
-### Requisito
-* [Eclipse Java IDE](https://www.eclipse.org/downloads/packages/release/mars/2/eclipse-ide-java-ee-developers)
-
 
 ### Instalação
 1. Faça o download do zip ou clone o repositório Git.
 2. Descompacte o arquivo zip (se você tiver baixado um)
-3. Abra o Eclipse
-4. Arquivo -> Importar -> Projeto Maven existente -> Navegue até a pasta em que você descompactou o zip
-5. Selecione o projeto certo
-6. Escolha o arquivo do aplicativo de inicialização Spring localizado em Java/Demo
-7. Clique com o botão direito do mouse no arquivo e em Executar como Aplicativo Java
-
-
+3. Abra o terminal e vá até o projeto, e entre na pasta onde está o pom.xml.
+4. Execulte o seguinte comando:
+   ``` mvn spring-boot:run```
