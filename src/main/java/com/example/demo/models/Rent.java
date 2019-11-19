@@ -19,8 +19,8 @@ public class Rent {
 	private int id;	
 	@ManyToOne
 	//@JsonManagedReference
-    @JoinColumn(name = "client_id", referencedColumnName = "id")
-	private Client client;
+    @JoinColumn(name = "lozuser_id", referencedColumnName = "id")
+	private LozUser lozUser;
 	@ManyToOne
 	//@JsonManagedReference
     @JoinColumn(name = "dress_id", referencedColumnName = "id")
@@ -39,11 +39,11 @@ public class Rent {
 	public void setId(int id) {
 		this.id = id;
 	}	
-	public Client getClient() {
-		return client;
+	public LozUser getUserClient() {
+		return lozUser;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public void setUser(LozUser lozUser) {
+		this.lozUser = lozUser;
 	}
 	public Dress getDress() {
 		return dress;

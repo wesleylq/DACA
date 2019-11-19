@@ -11,26 +11,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.models.Client;
-import com.example.demo.services.ClientService;
+import com.example.demo.models.LozUser;
+import com.example.demo.services.LozUserService;
 
 @RestController
-public class ClientController {
+public class LozUserController {
 	
 	@Autowired
-	private ClientService clientService;
+	private LozUserService clientService;	
 	
 	@RequestMapping("/clients")
-	public List<Client> getClients(){
+	public List<LozUser> getClients(){
 		return clientService.getClients();
 	}
 	
 	@RequestMapping("/clients/{id}")
-	public Client getClients(@PathVariable String id){
+	public LozUser getClients(@PathVariable String id){
 		return clientService.getClient(id);
 	}
 	@RequestMapping(value = "/clients", method = RequestMethod.POST)
-    public ResponseEntity<Client> addClient(@RequestBody Client client) {
+    public ResponseEntity<LozUser> addClient(@RequestBody LozUser client) {
 		
 		if(!this.checkClient(client.getName())) {			
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null); 
@@ -48,7 +48,7 @@ public class ClientController {
 
     public boolean checkClient(String clientName) {	
     	
-    	for (Client client : clientService.getClients() ) {
+    	for (LozUser client : clientService.getClients() ) {
     		if(client.getName().equals(clientName)) {
     			return false;
     		}
