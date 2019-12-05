@@ -26,6 +26,7 @@ public class LozUserController {
 	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	@RequestMapping("/clients")
 	public List<LozUser> getClients() throws InterruptedException{
+		TimeUnit.SECONDS.sleep((long) 0.5);
 		return clientService.getClients();
 	}
 	
