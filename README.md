@@ -17,6 +17,41 @@ Há três entidades simples: Cliente, Vestido e Aluguel(empréstimo), sendo alug
 
 A arquitetura no backend, utiliza-se de uma API RESTFul com SpringBoot, composta por três camadas lógicas: Controller, Service e Repository.
 
+### Segurança
+#### Autenticação
+A autenticação do usuário é  default inicialemente feita pela rota: POST "/login". 
+Deve-se enviar um Json no formato:  
+{ "username": "seuUsername",  
+  "password": "suaSenha" }
+
+
+#### Autorizaçâo
+Existem no sitema dois tipos de usuarios, ADMIN e USER. Para prósitos da disciplina apenas a rotasde criacao e remoção de usuários POST e DELETE "/clients/{id}" que tem o privilégio do ADMIN. GET "/clients" ambos tipos de usuários tem acesso.
+
+### Desempenho
+Para avaliação de desempenho do sistema, foi utilizado o JMeter. O JMeter é uma ferramenta que testa requisições HTTP forcando uma carga de interações e de usuários. Ela retorna uma avaliação completa e resultado mostrando como o aplicação lidou com o estresse imposto pelos testes.
+
+Para efeitos de comparação, foi testado a aplicaçao com e sem Cache na rota GET "/clients".
+Foram configuradas 1000 threads com infinitas interaçôes por tempo determinado.
+##### Sem Cache
+
+Nº de Requisiçôes HTTP: 74418  
+Tempo Médio de resposta : 400ms  
+Vazão: 2434.747/ms  
+
+![Image](https://ibb.co/HtHYgsw)  
+![Image](https://ibb.co/c6SPfJv)  
+
+##### Com Cache
+
+Nº de Requisiçôes HTTP: 138107  
+Tempo Médio de resposta : 214ms  
+Vazão: 4548.080/s  
+
+![Image](https://ibb.co/yVJZ4rN)  
+![Image](https://ibb.co/yyxmRbV)  
+
+
 
 ### Instalação
 1. Faça o download do zip ou clone o repositório Git.
