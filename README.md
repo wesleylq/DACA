@@ -34,7 +34,7 @@ Para avaliação de desempenho do sistema, foi utilizado o JMeter. O JMeter é u
 Para efeitos de comparação, foi testado a aplicaçao com e sem Cache na rota GET "/clients".
 Foram configuradas 1000 threads com infinitas interaçôes por tempo determinado.  
   
-Como será visto a seguir é notória que a diferença do tempo de respota é menor utilizando-se de Cache.  
+Como será visto a seguir é notória que a diferença do tempo de resposta é menor utilizando-se de Cache.  
 
 ##### Sem Cache
 
