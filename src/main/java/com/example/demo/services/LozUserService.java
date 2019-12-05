@@ -24,8 +24,7 @@ public class LozUserService  implements UserDetailsService{
 	
 	@Autowired
 	private LozUserRepository clientRepository;
-	
-	//@Cacheable(cacheNames = LozUser.CACHE_NAME, key="#root.method.name")
+
 	@Cacheable("LozUser")
 	public List<LozUser> getClients() {
 		return clientRepository.findAll();

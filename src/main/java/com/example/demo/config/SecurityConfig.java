@@ -20,9 +20,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    
     @Override
 	protected void configure(HttpSecurity http) throws Exception {
-    	http.authorizeRequests().antMatchers("/").permitAll();
-    	http.cors().and().csrf().disable();
-    	/*http.cors()
+    	//http.authorizeRequests().antMatchers("/").permitAll();
+    	//http.cors().and().csrf().disable();
+    	http.cors()
 		.and()
 		.csrf()
 		.disable()
@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.anyRequest().authenticated()
 		.and()
 		.addFilter(new JWTAuthenticationFilter(authenticationManager()))
-		.addFilter(new JWTAuthorizationFilter(authenticationManager(), lozUserService));*/
+		.addFilter(new JWTAuthorizationFilter(authenticationManager(), lozUserService));
 	}
 
     @Override

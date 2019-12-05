@@ -23,10 +23,9 @@ public class LozUserController {
 	@Autowired
 	private LozUserService clientService;	
 	
-	//@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	@RequestMapping("/clients")
 	public List<LozUser> getClients() throws InterruptedException{
-		//TimeUnit.SECONDS.sleep((long) 0.5);
 		return clientService.getClients();
 	}
 	
@@ -35,7 +34,7 @@ public class LozUserController {
 		return clientService.getClient(id);
 	}
 	
-	//@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	@RequestMapping(value = "/clients", method = RequestMethod.POST)
     public ResponseEntity<LozUser> addClient(@RequestBody LozUser client) {
 		
