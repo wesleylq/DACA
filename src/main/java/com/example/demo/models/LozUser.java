@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class LozUser {
-	
+	//public static final String CACHE_NAME = "LozUser";
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;

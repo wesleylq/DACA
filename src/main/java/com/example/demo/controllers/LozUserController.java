@@ -1,10 +1,12 @@
 package com.example.demo.controllers;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.LozUser;
 import com.example.demo.services.LozUserService;
+import com.example.demo.utils.PrivilegeUtils;
 
 @RestController
 public class LozUserController {
@@ -20,8 +23,10 @@ public class LozUserController {
 	@Autowired
 	private LozUserService clientService;	
 	
+	//@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	@RequestMapping("/clients")
-	public List<LozUser> getClients(){
+	public List<LozUser> getClients() throws InterruptedException{
+		//TimeUnit.SECONDS.sleep((long) 0.5);
 		return clientService.getClients();
 	}
 	
@@ -29,6 +34,8 @@ public class LozUserController {
 	public LozUser getClients(@PathVariable String id){
 		return clientService.getClient(id);
 	}
+	
+	//@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	@RequestMapping(value = "/clients", method = RequestMethod.POST)
     public ResponseEntity<LozUser> addClient(@RequestBody LozUser client) {
 		
@@ -39,7 +46,7 @@ public class LozUserController {
     	return ResponseEntity.status(HttpStatus.OK).body(client); 
 				
     }
-    
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
     @RequestMapping(value = "/client/{id}", method = RequestMethod.DELETE)
     public void deleteArtista(@PathVariable int id) {
     	clientService.deleteClient(id);

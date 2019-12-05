@@ -5,6 +5,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,14 +17,16 @@ import org.springframework.stereotype.Service;
 import com.example.demo.models.LozUser;
 import com.example.demo.repositories.LozUserRepository;
 
-
+@CacheConfig(cacheNames={"LozUser"})
 @Service
 @Transactional
 public class LozUserService  implements UserDetailsService{
 	
 	@Autowired
 	private LozUserRepository clientRepository;
-
+	
+	//@Cacheable(cacheNames = LozUser.CACHE_NAME, key="#root.method.name")
+	@Cacheable("LozUser")
 	public List<LozUser> getClients() {
 		return clientRepository.findAll();
 	}

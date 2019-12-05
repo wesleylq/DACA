@@ -20,7 +20,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    
     @Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.cors()
+    	http.authorizeRequests().antMatchers("/").permitAll();
+    	http.cors().and().csrf().disable();
+    	/*http.cors()
 		.and()
 		.csrf()
 		.disable()
@@ -28,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.anyRequest().authenticated()
 		.and()
 		.addFilter(new JWTAuthenticationFilter(authenticationManager()))
-		.addFilter(new JWTAuthorizationFilter(authenticationManager(), lozUserService));
+		.addFilter(new JWTAuthorizationFilter(authenticationManager(), lozUserService));*/
 	}
 
     @Override
@@ -37,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     /*
    @Override
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+   public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("wesley").password("123").roles("USER")
                 .and()
@@ -45,9 +47,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
     @Override
-    protected void configure(HttpSecurity http) {
+    protected void configure(HttpSecurity http) throws Exception {
     	http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
-    }
+    }*/
     
-    */
+    
 }
