@@ -32,15 +32,18 @@ Existem no sitema dois tipos de usuarios, ADMIN e USER. Para prósitos da discip
 Para avaliação de desempenho do sistema, foi utilizado o JMeter. O JMeter é uma ferramenta que testa requisições HTTP forcando uma carga de interações e de usuários. Ela retorna uma avaliação completa e resultado mostrando como o aplicação lidou com o estresse imposto pelos testes.
 
 Para efeitos de comparação, foi testado a aplicaçao com e sem Cache na rota GET "/clients".
-Foram configuradas 1000 threads com infinitas interaçôes por tempo determinado.
+Foram configuradas 1000 threads com infinitas interaçôes por tempo determinado.  
+  
+Como será visto a seguir é notória que a diferença do tempo de respota é menor utilizando-se de Cache.  
+
 ##### Sem Cache
 
 Nº de Requisiçôes HTTP: 74418  
 Tempo Médio de resposta : 400ms  
 Vazão: 2434.747/ms  
 
-![Image](https://ibb.co/HtHYgsw)  
-![Image](https://ibb.co/c6SPfJv)  
+![Image](https://i.ibb.co/qs2LnPx/lines.png)  
+![Image](https://i.ibb.co/25BCZTF/graph.png) 
 
 ##### Com Cache
 
@@ -48,8 +51,10 @@ Nº de Requisiçôes HTTP: 138107
 Tempo Médio de resposta : 214ms  
 Vazão: 4548.080/s  
 
-![Image](https://ibb.co/yVJZ4rN)  
-![Image](https://ibb.co/yyxmRbV)  
+
+![Image](https://i.ibb.co/QP3ZS9c/cached-Lines.png)  
+![Image](https://i.ibb.co/ZBMKTP4/cachedgraph.png)
+ 
 
 
 
